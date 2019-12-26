@@ -349,8 +349,9 @@ Please make a backup of your contracts and start using http://remix.ethereum.org
     self._components.filesProviders['browser'].resolveDirectory('/', (error, filesList) => {
       if (error) console.error(error)
       if (Object.keys(filesList).length === 0) {
-        for(let file in examples)
+        for (let file in examples) {
           fileManager.setFile(examples[file].name, examples[file].content)
+        }
       }
     })
   }
