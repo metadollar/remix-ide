@@ -171,7 +171,7 @@ UniversalDAppUI.prototype.getCallButton = function (args) {
           // removed, but for now keeping the original logic
           try {
             var fee = executionContext.web3().utils.toBN(tx.gas).mul(executionContext.web3().utils.toBN(executionContext.web3().utils.toWei(gasPrice.toString(10), 'gwei')))
-            txFeeText = ' ' + executionContext.web3().fromWei(fee.toString(10), 'ether') + ' Ether'
+            txFeeText = ' ' + executionContext.web3().utils.fromWei(fee.toString(10), 'ether') + ' Ether'
             priceStatus = true
           } catch (e) {
             txFeeText = ' Please fix this issue before sending any transaction. ' + e.message
